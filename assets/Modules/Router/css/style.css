@@ -1,0 +1,11 @@
+.navigation-general {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.text-navigation {
+    color: white;
+    text-decoration: none;
+}

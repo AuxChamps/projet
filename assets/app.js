@@ -1,3 +1,3 @@
-import {test} from "./Modules/TestComponent/main.jsx";
+import {index} from "./Modules/HomeComponent/main.jsx";
 
-test();
+index();
