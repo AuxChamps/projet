@@ -32,6 +32,15 @@ function StepUserInfo({handleUserData, nextStep, previousStep, userData}){
 
     return(
         <div className="row">
+            {userData.userType === "Agriculteur" && (
+                <div className="col-md-6">
+                    <div className="form-group">
+                        <label htmlFor="picture">Photo de profil</label>
+                        <input type="file" className="form-control" id="picture" name="picture" onChange={(e) => handleUserData({picture: e.target.files[0]})}/>
+                        {errors.picture && <p style={{color: 'red'}}>{errors.picture}</p>}
+                    </div>
+                </div>
+            )}
             <div className="col-md-6">
                 <div className="form-group">
                     <label htmlFor="nom">Nom</label>

@@ -8,7 +8,6 @@ import StepClientInfo from "./components/Client/StepClientInfo.jsx";
 
 function Register({}) {
     const [step, setStep] = useState(1);
-    const [userType, setUserType] = useState(""); // "agriculteur" ou "client"
     const [userData, setUserData] = useState({}); // je stocke les données de l'utilisateur
 
     const nextStep = () => setStep(step + 1);
@@ -21,11 +20,11 @@ function Register({}) {
     const renderStep = () => {
         switch (step) {
             case 1:
-                return <StepGeneral setUserType={setUserType} nextStep={nextStep} />;
+                return <StepGeneral handleUserData={handleUserData} nextStep={nextStep} />;
             case 2:
                 return <StepUserInfo handleUserData={handleUserData} nextStep={nextStep} previousStep={previousStep} userData={userData} />;
             case 3:
-                if (userType === "agriculteur") {
+                if (userData.userType === "Agriculteur") {
                     return <StepAgriculteurInfo handleUserData={handleUserData} nextStep={nextStep} previousStep={previousStep} />;
                 } else {
                     return <StepClientInfo handleUserData={handleUserData} nextStep={nextStep} previousStep={previousStep} />;

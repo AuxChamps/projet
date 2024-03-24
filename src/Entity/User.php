@@ -10,6 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
+#[ApiResource]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -31,6 +32,39 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $typeUser = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $pictureProfil = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $firstname = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $lastname = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $phoneNumber = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $nameOfCompany = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $siretNumber = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $addressSiege = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $address = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $postalCode = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $city = null;
 
     public function getId(): ?int
     {
@@ -105,5 +139,137 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getTypeUser(): ?string
+    {
+        return $this->typeUser;
+    }
+
+    public function setTypeUser(string $typeUser): static
+    {
+        $this->typeUser = $typeUser;
+
+        return $this;
+    }
+
+    public function getPictureProfil(): ?string
+    {
+        return $this->pictureProfil;
+    }
+
+    public function setPictureProfil(?string $pictureProfil): static
+    {
+        $this->pictureProfil = $pictureProfil;
+
+        return $this;
+    }
+
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setFirstname(string $firstname): static
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(string $lastname): static
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getPhoneNumber(): ?string
+    {
+        return $this->phoneNumber;
+    }
+
+    public function setPhoneNumber(?string $phoneNumber): static
+    {
+        $this->phoneNumber = $phoneNumber;
+
+        return $this;
+    }
+
+    public function getNameOfCompany(): ?string
+    {
+        return $this->nameOfCompany;
+    }
+
+    public function setNameOfCompany(?string $nameOfCompany): static
+    {
+        $this->nameOfCompany = $nameOfCompany;
+
+        return $this;
+    }
+
+    public function getSiretNumber(): ?string
+    {
+        return $this->siretNumber;
+    }
+
+    public function setSiretNumber(?string $siretNumber): static
+    {
+        $this->siretNumber = $siretNumber;
+
+        return $this;
+    }
+
+    public function getAddressSiege(): ?string
+    {
+        return $this->addressSiege;
+    }
+
+    public function setAddressSiege(?string $addressSiege): static
+    {
+        $this->addressSiege = $addressSiege;
+
+        return $this;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(?string $address): static
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getPostalCode(): ?string
+    {
+        return $this->postalCode;
+    }
+
+    public function setPostalCode(string $postalCode): static
+    {
+        $this->postalCode = $postalCode;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(?string $city): static
+    {
+        $this->city = $city;
+
+        return $this;
     }
 }
