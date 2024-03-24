@@ -11,7 +11,7 @@ export function index() {
         ReactDOM.createRoot(root).render(
             <React.StrictMode>
                 <BrowserRouter>
-                    <Menu />
+                    <Menu theme={"home-page"}/>
                     <AppRouter />
                 </BrowserRouter>
             </React.StrictMode>

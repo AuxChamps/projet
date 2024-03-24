@@ -1,10 +1,10 @@
 import "./assets/css/style.css";
+import Header from "./components/Header.jsx";
 
 function App({}) {
     return (
         <div id="index">
-            <img src="/assets/img/home/background.jpeg" alt="background" className="background-header" />
-            <h1 className="big">react est ok</h1>
+            <Header />
         </div>
     );
 }
